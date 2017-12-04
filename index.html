@@ -78,8 +78,8 @@
 
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">综述</a></li>
-                    <li><a href="#a">简述</a></li>
+                    <li><a href="#top">综述</a></li>
+                    <li><a href="javascript:void(0);" id="linkInfo">简述</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">浏览器 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -170,7 +170,7 @@
     <div class="container">
             
         <!-- 简介 -->
-        <div class="row text-center" id="a">
+        <div class="row text-center" id="info">
             <div class="col-md-4">
                 <img class="img-circle" src="./assets/img/chrome-logo-small.jpg" alt="chrome">    
                 <h2>Chrome</h2>    
@@ -313,6 +313,10 @@
             var href = $(this).attr('href');
             console.log(href);
             $('#mytab a[href="' + href + '"]').tab('show');
+        })
+
+        $('#linkInfo').on('click', function(){
+            $(document).scrollTop($('#info').offset().top - 70);
         })
     </script>
 
